@@ -1,0 +1,8 @@
+GET http://localhost:3050/?username=tiagoluizpoli
+
+
+###
+
+GET https://api.github.com/repos/tiagoluizpoli/spotify-integration/stats/contributors
+Authorization: Bearer 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
+Accept: application/vnd.github.v3+json
