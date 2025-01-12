@@ -1,10 +1,11 @@
 import express, { type Request, type Response } from 'express';
+import { env } from './config';
 import { getTotalCommitsByAuthor } from './github-service';
 
 const app = express();
 
 app.use(express.json());
-const port = 3050;
+const { port } = env;
 
 app.get('/', async (req: Request, res: Response) => {
   const { username } = req.query;
@@ -14,7 +15,6 @@ app.get('/', async (req: Request, res: Response) => {
     return;
   }
 
-  console.log(username);
   try {
     const totalCommits = await getTotalCommitsByAuthor(username as string);
     res.send({ totalCommits });

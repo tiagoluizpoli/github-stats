@@ -3,6 +3,7 @@ import { z } from 'zod';
 
 config();
 const envSchema = z.object({
+  port: z.number().min(1).max(65535).optional(),
   github: z.object({
     token: z.string().min(20),
   }),
@@ -11,6 +12,7 @@ const envSchema = z.object({
 type Env = z.infer<typeof envSchema>;
 
 const envObject: Env = {
+  port: process.env.PORT ? Number(process.env.PORT) : 3000,
   github: {
     token: process.env.GITHUB_TOKEN ?? '',
   },
