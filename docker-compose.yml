@@ -5,9 +5,10 @@ services:
       dockerfile: Dockerfile
     container_name: github-service
     ports:
-      - "3000:3000"
+      - "3050:3050"
     environment:
-      GITHUB_TOKEN: "github-token"
+      - PORT=${PORT}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
     networks:
       - directus-network
   directus:
