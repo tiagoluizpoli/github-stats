@@ -52,7 +52,12 @@ async function getCommitCountByAuthor(owner: string, repo: string, author: strin
   return totalCommits;
 }
 
-export const getTotalCommitsByAuthor = async (username: string): Promise<number> => {
+interface Result {
+  totalCommits: number;
+  totalRepositories: number;
+}
+
+export const getTotalCommitsByAuthor = async (username: string): Promise<Result> => {
   const repos = await getAllRepos();
   let totalCommits = 0;
 
@@ -66,5 +71,8 @@ export const getTotalCommitsByAuthor = async (username: string): Promise<number>
 
   console.log(`Total commits by ${username} across all repositories: ${totalCommits}`);
 
-  return totalCommits;
+  return {
+    totalCommits,
+    totalRepositories: repos.length,
+  };
 };

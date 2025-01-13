@@ -16,8 +16,8 @@ app.get('/', async (req: Request, res: Response) => {
   }
 
   try {
-    const totalCommits = await getTotalCommitsByAuthor(username as string);
-    res.send({ totalCommits });
+    const { totalCommits, totalRepositories } = await getTotalCommitsByAuthor(username as string);
+    res.send({ totalCommits, totalRepositories });
     return;
   } catch (error: any) {
     res.status(500).send({ error: error.message });
