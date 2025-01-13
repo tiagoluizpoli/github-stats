@@ -12,7 +12,7 @@ const envSchema = z.object({
 type Env = z.infer<typeof envSchema>;
 
 const envObject: Env = {
-  port: process.env.PORT ? Number(process.env.PORT) : 3000,
+  port: process.env.GITHUB_SERVICE_PORT ? Number(process.env.GITHUB_SERVICE_PORT) : 3000,
   github: {
     token: process.env.GITHUB_TOKEN ?? '',
   },

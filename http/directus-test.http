@@ -1,0 +1,17 @@
+POST http://localhost:8055/items/contact
+Content-Type: application/json
+Authorization: Bearer B5grPPGm31KZTLApAXcojojdAzv_EReT
+
+{
+  "name": "Tiago Luiz Pole",
+  "phoneNumber": "(11) 99999-9999",
+  "email": "tiagoluizpoli@gmail.com", 
+  "message": "Hello World!",
+  "solution": "backend"
+}
+
+###
+
+GET http://localhost:8055/items/contactInfo?filter[status][_eq]=published
+Content-Type: application/json
+Authorization: Bearer B5grPPGm31KZTLApAXcojojdAzv_EReT
