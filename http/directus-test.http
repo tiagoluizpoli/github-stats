@@ -21,11 +21,3 @@ Authorization: Bearer u9oOauzKFqUvpPriGGsPlWjLc3q9XyY7
 GET https://directus.lunalabs.com.br/translations
 Content-Type: application/json
 Authorization: Bearer u9oOauzKFqUvpPriGGsPlWjLc3q9XyY7
-
-
-
-
-
-###
-
-GET https://api.telegram.org/bot7483784514:AAEGvD5nNLzNj55phTCXOlEQ32E_cI48GKA/getUpdates
